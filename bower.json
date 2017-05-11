@@ -10,6 +10,9 @@
     "icalendar",
     "rfc"
   ],
+  "dependencies": {
+    "moment-timezone": "^0.5.13"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jakubroztocil/rrule.git"
