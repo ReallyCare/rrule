@@ -84,5 +84,4 @@ describe('RRule with Time Zones', function () {
     var results = rule.all()
     assert.equal(results.length, 28)
   })
-
 })
