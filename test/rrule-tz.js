@@ -1,18 +1,15 @@
-/* global describe, it, before */
+/* global describe, it */
 
-var TimeZoneDate = require('../lib/tz')
+var RRule = require('../')
+var TimeZoneDate = RRule.enableTimezones()
+
 var assert = require('assert')
 var moment = require('moment')
-var RRule = require('../')
 
 describe('RRule with Time Zones', function () {
   var melbTimeZone = 'Australia/Melbourne'
+  var londonTimeZone = 'Europe/London'
   var otherTimeZone = 'America/Los_Angeles'
-
-  before(function () {
-        // Ensure all dates are created as TimeZoneDate.
-    RRule.setDateClass(TimeZoneDate)
-  })
 
   it('testAfter Los Angeles', function () {
     var start = new TimeZoneDate([2000, 0, 1], otherTimeZone)
@@ -79,4 +76,13 @@ describe('RRule with Time Zones', function () {
     var results = rule.between(start, end)
     assert.equal(results[0].toString(), 'Fri Dec 26 2014 09:00:00 GMT+1100 (AEDT)')
   })
+
+  it('test all London', function () {
+    // Start date: "Mon Dec 22 2014 09:00:00 GMT+1100"
+    var ruleStr = 'FREQ=DAILY;DTSTART=20170508T000000Z;UNTIL=20170515T000000Z;WKST=MO;BYHOUR=7,12,17,22;BYMINUTE=0;BYSECOND=0;TIMEZONE=' + londonTimeZone
+    var rule = RRule.fromString(ruleStr)
+    var results = rule.all()
+    assert.equal(results.length, 28)
+  })
+
 })
