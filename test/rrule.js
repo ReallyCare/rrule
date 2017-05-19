@@ -164,6 +164,23 @@ describe('RRule', function () {
     ]
   )
 
+  testRecurring('testBetween2',
+    {
+      rrule: new RRule({
+        freq: RRule.DAILY,
+        byhour: [7, 12, 17, 22],
+        byminute: [0],
+        bysecond: [0],
+        dtstart: parse('20170101T090000')
+      }),
+      method: 'between',
+      args: [parse('20170202T000000'), parse('20170202T080000')]
+    },
+    [
+      datetime(2017, 2, 2, 7, 0)
+    ]
+  )
+
   testRecurring('testBetweenInc',
     {
       rrule: new RRule({

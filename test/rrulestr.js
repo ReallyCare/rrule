@@ -255,7 +255,7 @@ describe('rrulestr', function () {
 
   testRecurring('testStrNWeekDay',
     rrulestr(
-      'DTSTART:19970902T090000Z\n' +
+      'DTSTART:19971102T090000Z\n' +
       'RRULE:FREQ=YEARLY;COUNT=3;BYDAY=1TU,-1TH\n'
     ),
     [
