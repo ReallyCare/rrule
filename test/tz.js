@@ -4,7 +4,7 @@ var RRule = require('../')
 var TimeZoneDate = RRule.enableTimezones()
 
 // TODO Remove underscore dependency
-var _ = require('underscore')
+var _ = require('lodash')
 var assert = require('assert')
 
 describe('A TimeZoneDate', function () {

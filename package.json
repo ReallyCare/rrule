@@ -25,7 +25,7 @@
   "devDependencies": {
     "mocha": "^3.3.0",
     "standard": "^10.0.2",
-    "underscore": "1.8.3"
+    "lodash": "4.17.4"
   },
   "standard": {
     "ignore": [
