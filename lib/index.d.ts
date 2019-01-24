@@ -12,10 +12,10 @@ export = RRule;
 
 // For CommonJS it must be imported as `require("rrule").RRule`.
 import RRuleAlias = RRule;
-declare module "rrule" {
-    type RRule = RRuleAlias;
-    const RRule: typeof RRuleAlias;
-}
+// declare module "rrule" {
+//     type RRule = RRuleAlias;
+//     const RRule: typeof RRuleAlias;
+// }
 
 declare namespace RRule {
     /**
